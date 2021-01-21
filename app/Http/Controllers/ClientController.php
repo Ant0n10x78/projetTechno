@@ -14,4 +14,16 @@ class ClientController extends Controller
             'client' => $client
         ]);
     }
+
+    public function store(){
+        $pseudo = request('pseudo');
+
+        echo Client::all();
+        $client =new Client();
+        $client -> name = $pseudo;
+        $client ->save();
+        echo 'yala';
+        dd(Client::all());
+        return back();
+    }
 }

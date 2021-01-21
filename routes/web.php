@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+#use App\Http\Middleware\EnsureTokenIsValid;
 use App\Http\Controllers\ClientController;
 
 /*
@@ -34,6 +35,6 @@ Route::get('/signup', function () {
  });
 
 
-Route::get('/client',[ClientController::class,'list']);
-
+Route::get('/client',[ClientController::class,'list']);#->middleware(EnsureTokenIsValid::class);;
+Route::post('/client',[ClientController::class,'store'])
 ?>
