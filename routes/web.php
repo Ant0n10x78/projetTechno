@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,7 @@ Route::get('/signup', function () {
      return 'Votre mail recu est' .request('email');
  });
 
+
+Route::get('/client',[ClientController::class,'list']);
+
+?>
